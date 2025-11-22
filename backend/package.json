@@ -1,0 +1,21 @@
+{
+    "name": "backend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "keystone dev",
+        "start": "keystone start",
+        "build": "keystone build",
+        "postinstall": "keystone postinstall"
+    },
+    "overrides": {
+        "slate": "0.94.1",
+        "slate-react": "0.98.3"
+    },
+    "dependencies": {
+        "@keystone-6/auth": "^8.1.0",
+        "@keystone-6/core": "^6.5.1",
+        "@keystone-6/fields-document": "^9.1.1",
+        "typescript": "^5"
+    }
+}

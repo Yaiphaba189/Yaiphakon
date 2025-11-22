@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# keystone
+.keystone/
+backend/schema.graphql
+backend/schema.prisma
+backend/keystone.db
+backend/keystone.db-journal
+backend/public/images

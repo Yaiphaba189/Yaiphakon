@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Next.js + KeystoneJS Project
 
-## Getting Started
+A modern full-stack web application with Next.js frontend and KeystoneJS CMS backend.
 
-First, run the development server:
+## Installation
+
+### Prerequisites
+- Node.js 18+
+- PostgreSQL 14+
+
+### Setup
+
+1. **Clone and install dependencies**
+   ```bash
+   git clone <your-repo-url>
+   cd project
+   npm install
+   cd backend && npm install
+   ```
+
+2. **Configure database**
+   
+   Create `backend/.env`:
+   ```env
+   DATABASE_URL="postgres://postgres:postgres@localhost:5432/keystone"
+   ```
+
+3. **Initialize database**
+   ```bash
+   cd backend
+   npm run dev
+   ```
+   Create your admin user when prompted, then stop the server (Ctrl+C).
+
+## Development
+
+Run both servers in separate terminals:
 
 ```bash
+# Terminal 1 - Backend (port 4000)
+cd backend && npm run dev
+
+# Terminal 2 - Frontend (port 3000)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Admin CMS: [http://localhost:4000](http://localhost:4000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Build frontend
+npm run build
+npm start
 
-## Learn More
+# Build backend
+cd backend
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with Next.js 16, React 19, KeystoneJS 6, and Tailwind CSS 4
