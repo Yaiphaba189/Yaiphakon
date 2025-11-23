@@ -13,7 +13,7 @@ export default function About() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-4xl font-bold mb-6">Who We Are</h2>
+                        <h2 className="text-4xl font-bold mb-6">Who We  Are</h2>
                         <p className="text-lg text-gray-300 leading-relaxed mb-6">
                             A Manipur-based agri, bio, and food tech organisation committed to transforming local farming practices with modern, eco-friendly solutions.
                         </p>

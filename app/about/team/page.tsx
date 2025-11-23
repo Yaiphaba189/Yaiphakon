@@ -1,7 +1,7 @@
 import Breadcrumb from '@/components/Breadcrumb';
 import Image from 'next/image';
 
-export default function TeamPage() {
+export default function OurTeamPage() {
     const managementTeam = [
         {
             name: 'Surbala Yurembam',
@@ -9,7 +9,7 @@ export default function TeamPage() {
             image: '/Yaiphakon Member Photos/Surbala-Yurembam.jpg'
         },
         {
-            name: 'Konjengbam Romison Singh',
+            name: 'Konjengbam Romisonhi ',
             position: 'Director',
             image: '/Yaiphakon Member Photos/Konjengbam-Romison-Singh.jpg'
         },
@@ -21,7 +21,7 @@ export default function TeamPage() {
         {
             name: 'Dr. Robbart Nongmaithem',
             position: 'Food Engineering',
-            image: '/Yaiphakon Member Photos/placeholder.jpg' // No photo found
+            image: '/Yaiphakon Member Photos/Dr.-Robbart-Nongmaithem.jpg' // No photo yet
         },
         {
             name: 'Dayandhi Huidrom',
@@ -53,74 +53,69 @@ export default function TeamPage() {
             name: 'Prof. Jotish Nongthombam',
             position: 'Agri Engineering',
             description: 'Mizoram University',
-            image: '/Yaiphakon Member Photos/placeholder.jpg' // No photo found
+            image: '/Yaiphakon Member Photos/Prof.-Jotish-Nongthombam.jpg' // No photo yet
         }
     ];
 
     return (
         <>
+
             <Breadcrumb
                 title="Our Team"
-                items={[
-                    { label: 'About Us', href: '/about' },
-                    { label: 'Our Team' }
-                ]}
+                items={[{ label: 'About Us', href: '/about' }, { label: 'Our Team' }]}
             />
 
-            <div className='container mx-auto px-6 py-24'>
+            <div className="container mx-auto px-6 py-12">
                 {/* Management Team */}
-                <div className="mb-20">
-                    <h2 className="text-3xl font-bold mb-12 text-center text-primary">Management Team</h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {managementTeam.map((member, index) => (
-                            <div key={index} className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
-                                {/* Image */}
-                                <div className="h-64 bg-gray-100 relative">
-                                    <Image
-                                        src={member.image}
-                                        alt={member.name}
-                                        fill
-                                        className="object-contain"
-                                    />
-                                </div>
-                                {/* Info */}
-                                <div className="p-6 text-center">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                                    <p className="text-primary font-medium">{member.position}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Mentors */}
-                <div>
-                    <h2 className="text-3xl font-bold mb-12 text-center text-primary">Mentors</h2>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {mentors.map((mentor, index) => (
-                            <div key={index} className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
-                                <div className="flex flex-col md:flex-row">
-                                    {/* Image */}
-                                    <div className="h-64 bg-white relative flex items-center justify-center">
-                                        <div className="relative w-52 h-52 rounded-full overflow-hidden border-4 border-gray-100">
-                                            <Image
-                                                src={mentor.image}
-                                                alt={mentor.name}
-                                                fill
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                    </div>    {/* Info */}
-                                    <div className="p-6 flex-1">
-                                        <h3 className="text-xl font-bold text-gray-900 mb-2">{mentor.name}</h3>
-                                        <p className="text-primary font-semibold mb-2">{mentor.position}</p>
-                                        <p className="text-gray-600 text-sm">{mentor.description}</p>
+                <section className="mb-24">
+                    <h2 className="text-3xl font-bold mb-16 text-center text-primary">
+                        Management Team
+                    </h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                        {managementTeam.map((member, idx) => (
+                            <div key={idx} className="flex flex-col items-center text-center group">
+                                <div className="relative w-48 h-48 mb-6">
+                                    <div className="relative w-full h-full rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                        <Image
+                                            src={member.image}
+                                            alt={member.name}
+                                            fill
+                                            className="object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
+                                        />
                                     </div>
                                 </div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                                <p className="text-primary font-medium">{member.position}</p>
                             </div>
                         ))}
                     </div>
-                </div>
+                </section>
+
+                {/* Mentors */}
+                <section className="mb-12">
+                    <h2 className="text-3xl font-bold mb-16 text-center text-primary">
+                        Mentors
+                    </h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {mentors.map((mentor, idx) => (
+                            <div key={idx} className="flex flex-col items-center text-center group">
+                                <div className="relative w-40 h-40 mb-4">
+                                    <div className="relative w-full h-full rounded-full overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                                        <Image
+                                            src={mentor.image}
+                                            alt={mentor.name}
+                                            fill
+                                            className="object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                    </div>
+                                </div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-1">{mentor.name}</h3>
+                                <p className="text-primary font-medium mb-2 text-sm">{mentor.position}</p>
+                                <p className="text-gray-500 text-sm leading-relaxed max-w-xs">{mentor.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </div>
         </>
     );
