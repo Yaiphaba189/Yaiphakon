@@ -50,14 +50,14 @@ export default function Hero() {
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <Link
-                            href="#about"
+                            href="/about/company"
                             className="group px-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all flex items-center gap-2 shadow-lg shadow-black/20"
                         >
                             Learn More
                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <Link
-                            href="#contact"
+                            href="/contact"
                             className="px-8 py-4 border border-white/30 bg-white/5 backdrop-blur-sm text-white font-medium rounded-full hover:bg-white/10 transition-colors"
                         >
                             Contact Us

@@ -2,6 +2,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import { Briefcase, MapPin, Clock } from 'lucide-react';
 import { fetchGraphQL } from '@/lib/keystone';
 import { DocumentRenderer } from '@keystone-6/document-renderer';
+import Link from 'next/link';
 
 async function getJobs() {
     try {
@@ -75,9 +76,12 @@ export default async function JobOpeningsPage() {
                                     <DocumentRenderer document={job.description.document} />
                                     <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent"></div>
                                 </div>
-                                <button className="w-full py-2 px-4 bg-primary/10 text-primary rounded-lg font-medium hover:bg-primary/20 transition-colors mt-auto">
+                                <Link
+                                    href={`/careers/openings/${job.id}`}
+                                    className="w-full py-2 px-4 bg-primary/10 text-primary rounded-lg font-medium hover:bg-primary/20 transition-colors mt-auto text-center"
+                                >
                                     View Details
-                                </button>
+                                </Link>
                             </div>
                         ))}
                     </div>

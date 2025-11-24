@@ -1,5 +1,5 @@
 'use client';
-
+import Link from "next/link";
 import { motion } from 'framer-motion';
 import { Check, ArrowRight, Zap } from 'lucide-react';
 
@@ -36,11 +36,15 @@ export default function ContentSplit() {
                                 </li>
                             ))}
                         </ul>
+                        <div className="flex flex-col sm:flex-row gap-4 ">
+                            <Link href="/about/company"
 
-                        <button className="px-8 py-4 bg-secondary text-black rounded-full font-bold hover:bg-secondary/90 transition-colors flex items-center gap-2">
-                            Explore Our Work
-                            <ArrowRight size={18} />
-                        </button>
+                                className="px-8 py-4 bg-secondary text-black rounded-full font-bold hover:bg-secondary/90 transition-colors flex items-center gap-2">
+
+                                Explore Our Work
+                                <ArrowRight size={18} />
+                            </Link>
+                        </div>
                     </motion.div>
 
                     {/* Right Image */}
