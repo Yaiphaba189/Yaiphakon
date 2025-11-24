@@ -6,7 +6,7 @@ export default withAuth(
     config({
         db: {
             provider: 'postgresql',
-            url: process.env.DATABASE_URL || 'postgres://yaiphaba@localhost:5432/keystone',
+            url: process.env.DATABASE_URL!,
         },
         server: {
             port: 4000,

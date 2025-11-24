@@ -13,7 +13,7 @@ const { withAuth } = createAuth({
 
 const session = statelessSessions({
     maxAge: 60 * 60 * 24 * 30,
-    secret: 'super_secret_session_secret_change_me_in_production_please_123456789',
+    secret: process.env.SESSION_SECRET!,
 });
 
 export { withAuth, session };
